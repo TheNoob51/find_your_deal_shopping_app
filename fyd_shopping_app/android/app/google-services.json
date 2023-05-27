@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "285911494572",
+    "project_id": "fydshoppingapp",
+    "storage_bucket": "fydshoppingapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285911494572:android:2273490db601bedcae9409",
+        "android_client_info": {
+          "package_name": "com.example.fyd_shopping_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285911494572-r8aokn5bidi59dblhh0q3dess8oliifl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fyd_shopping_app",
+            "certificate_hash": "5227f8f932342e7941bb9896f6df7b146cb318a1"
+          }
+        },
+        {
+          "client_id": "285911494572-n51dko34ot7ggmjv5gs4983260is4bgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSXNqE6fPtUQFKmbVhtiJ6GH4kCmVaL4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285911494572-n51dko34ot7ggmjv5gs4983260is4bgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
