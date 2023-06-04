@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 
 //login method
 class AuthController extends GetxController {
+  var isLoading = false.obs;
+
 //textcontrollers
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -42,8 +44,13 @@ class AuthController extends GetxController {
   StorageUserData({name, password, email}) async {
     DocumentReference store =
         firestore.collection(usersCollection).doc(currentUser!.uid);
-    store.set(
-        {'name': name, 'password': password, 'email': email, 'imageUrl': ''});
+    store.set({
+      'name': name,
+      'password': password,
+      'email': email,
+      'imageUrl': '',
+      'id': currentUser!.uid
+    });
   }
 
   //signout method
