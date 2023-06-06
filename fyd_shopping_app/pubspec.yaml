@@ -42,6 +42,7 @@ dependencies:
   google_fonts: ^4.0.4
   firebase_storage: ^11.2.0
   cloud_firestore: ^4.7.0
+  image_picker: ^0.8.7+5
 
 dev_dependencies:
   flutter_lints: ^2.0.0

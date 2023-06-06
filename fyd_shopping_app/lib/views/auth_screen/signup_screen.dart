@@ -41,103 +41,111 @@ class _SignupScreenState extends State<SignupScreen> {
             10.heightBox,
             "Join The $appname".text.fontFamily(bold).white.size(18).make(),
             15.heightBox,
-            Column(children: [
-              customTextField(
-                  hint: nameHint,
-                  title: name,
-                  controller: nameController,
-                  isPass: false),
-              customTextField(
-                  hint: emailHint,
-                  title: email,
-                  controller: emailController,
-                  isPass: false),
-              customTextField(
-                  hint: passwordHint,
-                  title: password,
-                  controller: passwordController,
-                  isPass: true),
-              customTextField(
-                  hint: passwordHint,
-                  title: retypePassword,
-                  controller: passwordRetypeController,
-                  isPass: true),
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                      onPressed: () {}, child: forgetPass.text.make())),
-              //2.heightBox,
-              //ourButton().box.width(context.screenWidth - 50).make(),
-              Row(children: [
-                Checkbox(
-                  checkColor: redColor,
-                  value: isCheck,
-                  onChanged: (newvalue) {
-                    setState(() {
-                      isCheck = newvalue;
-                    });
-                  },
-                ),
-                10.widthBox,
-                Expanded(
-                  child: RichText(
-                    text: const TextSpan(children: [
-                      TextSpan(
-                          text: "I agree to the Terms & conditions ",
-                          style: TextStyle(fontFamily: bold, color: fontGrey))
-                    ]),
+            Obx(
+              () => Column(children: [
+                customTextField(
+                    hint: nameHint,
+                    title: name,
+                    controller: nameController,
+                    isPass: false),
+                customTextField(
+                    hint: emailHint,
+                    title: email,
+                    controller: emailController,
+                    isPass: false),
+                customTextField(
+                    hint: passwordHint,
+                    title: password,
+                    controller: passwordController,
+                    isPass: true),
+                customTextField(
+                    hint: passwordHint,
+                    title: retypePassword,
+                    controller: passwordRetypeController,
+                    isPass: true),
+                Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                        onPressed: () {}, child: forgetPass.text.make())),
+                //2.heightBox,
+                //ourButton().box.width(context.screenWidth - 50).make(),
+                Row(children: [
+                  Checkbox(
+                    checkColor: redColor,
+                    value: isCheck,
+                    onChanged: (newvalue) {
+                      setState(() {
+                        isCheck = newvalue;
+                      });
+                    },
                   ),
-                )
-              ]),
+                  10.widthBox,
+                  Expanded(
+                    child: RichText(
+                      text: const TextSpan(children: [
+                        TextSpan(
+                            text: "I agree to the Terms & conditions ",
+                            style: TextStyle(fontFamily: bold, color: fontGrey))
+                      ]),
+                    ),
+                  )
+                ]),
 
-              ourButton(
-                  color: isCheck == true ? redColor : lightGrey,
-                  title: signup,
-                  textcolor: whiteColor,
-                  onPress: () async {
-                    if (isCheck != false) {
-                      try {
-                        await controller
-                            .signupMethod(
-                                context: context,
-                                email: emailController.text,
-                                password: passwordController.text)
-                            .then((value) {
-                          return controller.StorageUserData(
-                            email: emailController.text,
-                            password: passwordController.text,
-                            name: nameController.text,
-                          );
-                        }).then((value) {
-                          VxToast.show(context, msg: loggedin);
-                          Get.offAll(() => const Home());
-                        });
-                      } catch (e) {
-                        auth.signOut();
-                        VxToast.show(context, msg: e.toString());
-                      }
-                    }
-                  }).animatedBox.width(context.screenWidth - 50).make(),
+                controller.isLoading.value
+                    ? const CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation(redColor),
+                      )
+                    : ourButton(
+                        color: isCheck == true ? redColor : lightGrey,
+                        title: signup,
+                        textcolor: whiteColor,
+                        onPress: () async {
+                          if (isCheck != false) {
+                            controller.isLoading(true);
+                            try {
+                              await controller
+                                  .signupMethod(
+                                      context: context,
+                                      email: emailController.text,
+                                      password: passwordController.text)
+                                  .then((value) {
+                                return controller.StorageUserData(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                  name: nameController.text,
+                                );
+                              }).then((value) {
+                                VxToast.show(context, msg: loggedin);
+                                Get.offAll(() => const Home());
+                              });
+                            } catch (e) {
+                              auth.signOut();
+                              VxToast.show(context, msg: e.toString());
+                              controller.isLoading(false);
+                            }
+                          }
+                        }).animatedBox.width(context.screenWidth - 50).make(),
 
-              RichText(
-                  text: const TextSpan(children: [
-                TextSpan(
-                    text: "Already Have a Account?",
-                    style: TextStyle(fontFamily: bold, color: fontGrey)),
-                TextSpan(
-                    text: "LOGIN",
-                    style: TextStyle(fontFamily: bold, color: redColor))
-              ])).onTap(() {
-                Get.back();
-              }),
-            ])
-                .box
-                .white
-                .rounded
-                .padding(const EdgeInsets.all(16))
-                .width(context.screenWidth - 70)
-                .shadowSm
-                .make()
+                RichText(
+                    text: const TextSpan(children: [
+                  TextSpan(
+                      text: "Already Have a Account?",
+                      style: TextStyle(fontFamily: bold, color: fontGrey)),
+                  TextSpan(
+                      text: "LOGIN",
+                      style: TextStyle(fontFamily: bold, color: redColor))
+                ])).onTap(() {
+                  Get.back();
+                }),
+              ])
+                  .box
+                  .white
+                  .rounded
+                  .padding(const EdgeInsets.all(16))
+                  .width(context.screenWidth - 70)
+                  .shadowSm
+                  .make(),
+            )
           ],
         ),
       ),
