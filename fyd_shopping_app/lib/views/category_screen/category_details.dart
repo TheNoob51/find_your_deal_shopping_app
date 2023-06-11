@@ -3,6 +3,7 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:fyd_shopping_app/consts/consts.dart';
+import 'package:fyd_shopping_app/controllers/product_controller.dart';
 import 'package:fyd_shopping_app/views/category_screen/item_details.dart';
 import 'package:fyd_shopping_app/views/widgets_common/bg_widget.dart';
 import 'package:get/get.dart';
@@ -13,21 +14,25 @@ class CategoryDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.find<ProductController>();
+
     return bgWidget(
         child: Scaffold(
       appBar: AppBar(title: title!.text.fontFamily(bold).make()),
       body: Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(8),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                     children: List.generate(
-                        6,
-                        (index) => "Baby Clothing"
+                        controller.subcat.length,
+                        (index) => "${controller.subcat[index]}"
                             .text
+                            .size(12)
                             .fontFamily(semibold)
                             .color(darkFontGrey)
                             .makeCentered()

@@ -42,13 +42,13 @@ const searchanything = "Search Anything....",
 
 // category screen
 const womenClothing = "Women Clothing",
-    menClothingFashion = "Men Clothing ",
+    menClothingFashion = "Men Clothing",
     compAcess = "Computer & Accessories",
     automobile = "Automobile",
     kidtoys = "Kids & Toys",
     sports = "Sports",
     jewellery = "Jewellery",
-    phone = "phone & Tab",
+    phone = "Cellphone & Tablets",
     furniture = "Furniture";
 
 //item details strings
@@ -60,4 +60,8 @@ const video = "Video",
     productsyoumaylike = "Products you may also like";
 
 //profile strings
-const wishlist = "My Wishlist", orders = "My Orders", messages = "messages";
+const wishlist = "My Wishlist",
+    orders = "My Orders",
+    messages = "messages",
+    oldpass = 'Old Password',
+    newpass = 'New Password';
