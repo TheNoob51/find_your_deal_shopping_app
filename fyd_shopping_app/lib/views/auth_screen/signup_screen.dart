@@ -98,7 +98,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     : ourButton(
                         color: isCheck == true ? redColor : lightGrey,
                         title: signup,
-                        textcolor: whiteColor,
+                        textColor: whiteColor,
                         onPress: () async {
                           if (isCheck != false) {
                             controller.isLoading(true);

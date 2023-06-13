@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                     : ourButton(
                         color: redColor,
                         title: login,
-                        textcolor: whiteColor,
+                        textColor: whiteColor,
                         onPress: () async {
                           controller.isLoading(true);
 
@@ -88,7 +88,7 @@ class LoginScreen extends StatelessWidget {
                 ourButton(
                     color: lightGolden,
                     title: signup,
-                    textcolor: redColor,
+                    textColor: redColor,
                     onPress: () {
                       Get.to(() => const SignupScreen());
                     }).animatedBox.width(context.screenWidth - 50).make(),
