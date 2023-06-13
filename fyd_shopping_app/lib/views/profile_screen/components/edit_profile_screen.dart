@@ -1,5 +1,5 @@
 // ignore: implementation_imports
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, use_build_context_synchronously
 
 import 'dart:io';
 
@@ -58,7 +58,7 @@ class EditProfileScreen extends StatelessWidget {
                 onPress: () {
                   controller.changeImage(context);
                 },
-                textcolor: whiteColor,
+                textColor: whiteColor,
                 title: "Change"),
             const Divider(),
             20.heightBox,
@@ -111,11 +111,11 @@ class EditProfileScreen extends StatelessWidget {
                                 password: controller.newpassController.text);
                             VxToast.show(context, msg: "Updated");
                           } else {
-                            VxToast.show(context, msg: "Wronf old Password");
+                            VxToast.show(context, msg: "Wrong old Password");
                             controller.isLoading(false);
                           }
                         },
-                        textcolor: whiteColor,
+                        textColor: whiteColor,
                         title: "Save"),
                   ),
           ],
