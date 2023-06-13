@@ -2,9 +2,6 @@
 // ignore_for_file: unused_import, use_build_context_synchronously
 
 import 'dart:io';
-
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:fyd_shopping_app/consts/consts.dart';
 import 'package:fyd_shopping_app/controllers/profile_controller.dart';
 import 'package:fyd_shopping_app/views/widgets_common/bg_widget.dart';

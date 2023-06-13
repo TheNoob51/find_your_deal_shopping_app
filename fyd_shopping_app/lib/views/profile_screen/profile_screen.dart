@@ -98,7 +98,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
 
-                      20.heightBox,
+                      10.heightBox,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [

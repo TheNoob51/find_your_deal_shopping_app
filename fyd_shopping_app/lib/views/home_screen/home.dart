@@ -4,6 +4,7 @@ import 'package:fyd_shopping_app/views/cart_screen/cart_screen.dart';
 import 'package:fyd_shopping_app/views/category_screen/category_screen.dart';
 import 'package:fyd_shopping_app/views/home_screen/home_screen.dart';
 import 'package:fyd_shopping_app/views/profile_screen/profile_screen.dart';
+import 'package:fyd_shopping_app/views/widgets_common/exit_dialogue.dart';
 import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
@@ -34,6 +35,10 @@ class Home extends StatelessWidget {
 
     return WillPopScope(
       onWillPop: () async {
+        showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder: (context) => exitDialog(context));
         return false;
       },
       child: Scaffold(
