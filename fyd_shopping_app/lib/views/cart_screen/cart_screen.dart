@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fyd_shopping_app/consts/consts.dart';
+import 'package:fyd_shopping_app/views/cart_screen/shipping_screen.dart';
 import 'package:fyd_shopping_app/views/widgets_common/our_button.dart';
 import 'package:get/get.dart';
 import 'package:fyd_shopping_app/controllers/cart_controller.dart';
@@ -14,6 +15,17 @@ class CartScreen extends StatelessWidget {
     var controller = Get.put(CartController());
 
     return Scaffold(
+      bottomNavigationBar: SizedBox(
+        height: 60,
+        child: ourButton(
+          color: redColor,
+          onPress: () {
+            Get.to(() => const ShippingDetails());
+          },
+          textColor: whiteColor,
+          title: "Proceed to shipping",
+        ),
+      ),
       backgroundColor: whiteColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -37,6 +49,7 @@ class CartScreen extends StatelessWidget {
           } else {
             var data = snapshot.data!.docs;
             controller.calculate(data);
+            controller.productSnapshot = data;
             return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -94,15 +107,15 @@ class CartScreen extends StatelessWidget {
                         .roundedSM
                         .make(),
                     10.heightBox,
-                    SizedBox(
-                      width: context.screenWidth - 60,
-                      child: ourButton(
-                        color: redColor,
-                        onPress: () {},
-                        textColor: whiteColor,
-                        title: "Proceed to shipping",
-                      ),
-                    ),
+                    //SizedBox(
+                    //width: context.screenWidth - 60,
+                    //child: ourButton(
+                    //color: redColor,
+                    //onPress: () {},
+                    //textColor: whiteColor,
+                    //title: "Proceed to shipping",
+                    //),
+                    //),
                   ],
                 ));
           }

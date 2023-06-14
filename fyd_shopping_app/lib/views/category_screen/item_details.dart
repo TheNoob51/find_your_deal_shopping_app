@@ -41,20 +41,21 @@ class ItemDetails extends StatelessWidget {
                   Icons.share,
                   color: darkFontGrey,
                 )),
-            IconButton(
-                onPressed: () {
-                  if (controller.isFav.value) {
-                    controller.removeFromWishlist(data.id);
-                    controller.isFav(false);
-                  } else {
-                    controller.addToWishlist(data.id);
-                    controller.isFav(true);
-                  }
-                },
-                icon: const Icon(
-                  Icons.favorite_outlined,
-                  //to set appbar icon color, (back,share,favourite), go to main.dart
-                )),
+            Obx(
+              () => IconButton(
+                  onPressed: () {
+                    if (controller.isFav.value) {
+                      controller.removeFromWishlist(data.id, context);
+                    } else {
+                      controller.addToWishlist(data.id, context);
+                    }
+                  },
+                  icon: Icon(
+                    Icons.favorite_outlined,
+                    color: controller.isFav.value ? redColor : darkFontGrey,
+                    //to set appbar icon color, (back,share,favourite), go to main.dart
+                  )),
+            ),
           ],
         ),
         body: Column(
