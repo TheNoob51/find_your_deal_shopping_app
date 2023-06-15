@@ -18,7 +18,7 @@ class ItemDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //print(Colors.black.value);
-    var controller = Get.find<ProductController>();
+    var controller = Get.put(ProductController());
     return WillPopScope(
       onWillPop: () async {
         controller.resetValues();
@@ -293,50 +293,50 @@ class ItemDetails extends StatelessWidget {
                       40.heightBox,
 
                       //products you may also like
-                      productsyoumaylike.text
-                          .color(darkFontGrey)
-                          .fontFamily(bold)
-                          .make(),
-                      10.heightBox,
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: List.generate(
-                              6,
-                              (index) => Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                        imgP1,
-                                        width: 150,
-                                        fit: BoxFit.cover,
-                                      ),
-                                      10.heightBox,
-                                      "Laptop 4GB/64GB"
-                                          .text
-                                          .fontFamily(semibold)
-                                          .color(darkFontGrey)
-                                          .make(),
-                                      10.heightBox,
-                                      "\$600"
-                                          .text
-                                          .color(redColor)
-                                          .fontFamily(bold)
-                                          .size(16)
-                                          .make(),
-                                      10.heightBox,
-                                    ],
-                                  )
-                                      .box
-                                      .white
-                                      .margin(const EdgeInsets.symmetric(
-                                          horizontal: 4))
-                                      .rounded
-                                      .padding(const EdgeInsets.all(8))
-                                      .make()),
-                        ),
-                      )
+                      //   productsyoumaylike.text
+                      //       .color(darkFontGrey)
+                      //       .fontFamily(bold)
+                      //        .make(),
+                      //   10.heightBox,
+                      //SingleChildScrollView(
+                      //scrollDirection: Axis.horizontal,
+                      //child: Row(
+                      // children: List.generate(
+                      //     6,
+                      //     (index) => Column(
+                      //          crossAxisAlignment:
+                      //              CrossAxisAlignment.center,
+                      //          children: [
+                      //           Image.asset(
+                      //             imgP1,
+                      //              width: 150,
+                      //             fit: BoxFit.cover,
+                      //           ),
+                      //           10.heightBox,
+                      //          "Laptop 4GB/64GB"
+                      //              .text
+                      //               .fontFamily(semibold)
+                      //               .color(darkFontGrey)
+                      //               .make(),
+                      //           10.heightBox,
+                      //           "\$600"
+                      //               .text
+                      //               .color(redColor)
+                      //               .fontFamily(bold)
+                      //                 .size(16)
+                      //                 .make(),
+                      //              10.heightBox,
+                      //            ],
+                      //         )
+                      //             .box
+                      //             .white
+                      //              .margin(const EdgeInsets.symmetric(
+                      //                  horizontal: 4))
+                      //               .rounded
+                      //                 .padding(const EdgeInsets.all(8))
+                      //                 .make()),
+                      //   ),
+                      //)
                     ],
                   ).box.white.shadowSm.make(),
                 ),
@@ -348,15 +348,21 @@ class ItemDetails extends StatelessWidget {
               child: ourButton(
                   color: Colors.red,
                   onPress: () {
-                    controller.addToCart(
-                        color: data['p_colors'][controller.colorIndex.value],
-                        context: context,
-                        img: data['p_imgs'][0],
-                        qty: controller.quantity.value,
-                        sellername: data['p_seller'],
-                        title: data['p_name'],
-                        tprice: controller.totalPrice.value);
-                    VxToast.show(context, msg: "Added to cart");
+                    if (controller.quantity.value > 0) {
+                      controller.addToCart(
+                          color: data['p_colors'][controller.colorIndex.value],
+                          context: context,
+                          img: data['p_imgs'][0],
+                          qty: controller.quantity.value,
+                          sellername: data['p_seller'],
+                          vendorId: data['vendor_id'],
+                          title: data['p_name'],
+                          tprice: controller.totalPrice.value);
+                      VxToast.show(context, msg: "Added to cart");
+                    } else {
+                      VxToast.show(context,
+                          msg: "Minimum 1 product is required for cart");
+                    }
                   },
                   textColor: whiteColor,
                   title: "Add to Cart"),

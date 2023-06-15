@@ -67,4 +67,4 @@ const wishlist = "My Wishlist",
     newpass = 'New Password';
 
 //payment methods
-const paypal = "Paypal", stripe = "Stripe", cod = "Cash on delivery";
+const paypal = "Paytm", stripe = "Debit/Credit Card", cod = "Cash on delivery";
