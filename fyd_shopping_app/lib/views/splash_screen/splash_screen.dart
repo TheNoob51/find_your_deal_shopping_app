@@ -52,23 +52,14 @@ class _SplashScreenState extends State<SplashScreen> {
       decoration: BoxDecoration(
         // Image set to background of the body
         image: DecorationImage(
-            image: AssetImage(imgBackground), fit: BoxFit.cover),
+            image: AssetImage(imgBackground1), fit: BoxFit.cover),
       ),
       child: Center(
           child: Column(
         children: [
-          Align(
-              alignment: Alignment.topLeft,
-              child: Image.asset(icSplashBg, width: 300)),
           20.heightBox,
 
-          credits.text.fontFamily(ti).size(28).black.make(),
-          5.heightBox,
-          subline1.text.black.make(),
-          5.heightBox,
-          subline2.text.black.make(),
           Spacer(),
-          appversion.text.black.fontFamily(semibold).make(),
           30.heightBox,
           //completed splash screen
         ],

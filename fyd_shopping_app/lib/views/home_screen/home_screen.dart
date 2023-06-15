@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: List.generate(
-                      3,
+                      2,
                       (index) => Column(
                         children: [
                           featuredButton(
@@ -164,7 +164,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(12),
                   width: double.infinity,
-                  decoration: const BoxDecoration(color: redColor),
+                  decoration: const BoxDecoration(color: blackColor),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

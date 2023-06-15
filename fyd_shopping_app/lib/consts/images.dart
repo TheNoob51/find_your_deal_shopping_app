@@ -53,6 +53,7 @@ const icWholeSale = "assets/icons/wholesale.png";
 //images
 
 const imgBackground = "assets/icons/bg.png";
+const imgBackground1 = "assets/icons/bg1.png";
 const imgB1 = "assets/images/b1.jpeg";
 const imgB2 = "assets/images/b2.jpeg";
 const imgB3 = "assets/images/b3.jpeg";
@@ -99,7 +100,7 @@ const imgPi2 = "assets/images/pi2.jpg";
 const imgPi3 = "assets/images/pi3.jpg";
 const imgPi4 = "assets/images/pi4.jpg";
 const imgPi5 = "assets/images/pi5.jpg";
-const imgProfile2 = "assets/images/profile_image_joya_ahsan.jpg";
+const imgProfile2 = "assets/images/userdefault.png";
 const imgProfile = "assets/images/profile_image.png";
 const imgRavePayment = "assets/images/rave_payment.png";
 const imgRozarpay = "assets/images/rozarpay.png";

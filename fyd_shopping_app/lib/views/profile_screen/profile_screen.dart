@@ -193,7 +193,7 @@ class ProfileScreen extends StatelessWidget {
                           .shadowSm
                           .make()
                           .box
-                          .color(redColor)
+                          .color(blackColor)
                           .make(),
                     ],
                   ),
