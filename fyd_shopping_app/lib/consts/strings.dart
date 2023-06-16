@@ -66,6 +66,7 @@ const wishlist = "My Wishlist",
     orders = "My Orders",
     messages = "messages",
     oldpass = 'Old Password',
+    reselling = "Reselling",
     newpass = 'New Password';
 
 //payment methods
