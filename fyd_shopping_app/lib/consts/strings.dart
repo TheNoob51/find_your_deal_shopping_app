@@ -17,6 +17,8 @@ const loginWith = "Log in with";
 const retypePassword = "Retype Password";
 const name = "Name";
 const nameHint = "Abcde";
+const aadharHint = "Enter Your 12 Digit Aadhar no.";
+const aadhar = "Aadhar No.";
 
 //home strings
 const home = "Home",
