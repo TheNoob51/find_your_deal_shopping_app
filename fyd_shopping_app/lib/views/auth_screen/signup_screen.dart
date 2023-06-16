@@ -33,7 +33,7 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return bgWidget(
         child: Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       body: Center(
         child: SingleChildScrollView(
           child: Column(
