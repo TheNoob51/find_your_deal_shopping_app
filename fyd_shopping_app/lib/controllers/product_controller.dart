@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:fyd_shopping_app/models/category_model.dart';
 
 import '../consts/consts.dart';
-import '../consts/firebase_consts.dart';
 
 class ProductController extends GetxController {
   var subcat = [];

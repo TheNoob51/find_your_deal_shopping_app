@@ -1,5 +1,4 @@
 import 'package:fyd_shopping_app/consts/consts.dart';
-import 'package:fyd_shopping_app/consts/firebase_consts.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {

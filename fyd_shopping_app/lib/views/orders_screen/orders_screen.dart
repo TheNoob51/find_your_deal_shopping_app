@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fyd_shopping_app/services/firestore_services.dart';
-import 'package:fyd_shopping_app/views/orders_screen/components/order_status.dart';
 import 'package:fyd_shopping_app/views/orders_screen/orders_detail.dart';
 import 'package:fyd_shopping_app/views/widgets_common/loading_indicator.dart';
 import 'package:get/get.dart';

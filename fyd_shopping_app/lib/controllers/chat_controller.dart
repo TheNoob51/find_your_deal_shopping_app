@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fyd_shopping_app/consts/firebase_consts.dart';
 import 'package:fyd_shopping_app/controllers/home_controller.dart';
 import 'package:get/get.dart';
 
