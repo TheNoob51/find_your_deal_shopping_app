@@ -19,7 +19,7 @@ FYD (Find Your Deal) is a user-friendly E-commerce app designed to provide a smo
 
 
 ## Getting Started
-**Prerequisites**
+### Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -27,17 +27,16 @@ Flutter
 Dart
 Firebase account
 
-**Installation**
+### Installation
+
 Clone the repository:
 
-bash
+Copy code
 
-Copy code
+```
 git clone https://github.com/your-username/FYD.git
-Navigate to the project directory:
-bash
-Copy code
-cd FYD
+```
+
 Install dependencies:
 bash
 Copy code
@@ -46,26 +45,34 @@ Configuration
 Set up Firebase project:
 
 Create a new project on the Firebase Console
-.
+
 Add your Android and iOS apps to the Firebase project.
+
 Download the configuration files (google-services.json for Android, GoogleService-Info.plist for iOS) and place them in the appropriate directories.
+
 Configure Firebase Authentication:
 
 Enable Email/Password sign-in method.
+
 Update the lib/config/firebase_config.dart file with your Firebase configuration.
 
 
-**Usage**
+### Usage
+
 Run the app on an emulator or physical device
 
-
-**Explore FYD, register an account, and start finding your best deals!**
-
-## Contributing
+### Contributing
 We welcome contributions! Please follow our contribution guidelines.
+
+<p align="center">
+<b>Explore FYD, register an account, and start finding your best deals!</b>
+</p>
 
 ## License
 This project is licensed under FYD.
 
 ## Acknowledgments
 Special thanks to the Flutter and Firebase communities for their support.
+
+## Creators of the Project
+
