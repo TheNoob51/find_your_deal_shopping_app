@@ -75,4 +75,8 @@ This project is licensed under FYD.
 Special thanks to the Flutter and Firebase communities for their support.
 
 ## Creators of the Project
+[Gyan Vardhan](https://github.com/TheNoob51)
 
+[Harshit Gautam](https://github.com/Harshitgautam93)
+
+[Shalini Roy](https://github.com/shalr-20)
